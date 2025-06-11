@@ -23,6 +23,6 @@ jobs:
           global-json-file: ./global.json      
 
       - name: Publish project
-        run: dotnet publish src/WpfApp1 --os win /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=none --self-contained false -o ./pub
+        run: dotnet publish src/WpfApp1 --os win /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -p:EnableWindowsTargeting=true -p:DebugType=none --self-contained false -o ./pub
 
       
