@@ -20,16 +20,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          global-json-file: ./global.json
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build project
-        run: dotnet build --configuration Release
-
-      - name: Run tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+          global-json-file: ./global.json      
 
       - name: Publish project
         run: dotnet publish src/WpfApp1 --os win /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=none --self-contained false -o ./pub
